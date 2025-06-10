@@ -48,8 +48,8 @@ const SkipSelectionPage: React.FC = () => {
       <div className="min-h-screen bg-gray-900 flex items-center justify-center">
         <div className="text-center">
           <p className="text-red-400 mb-4">Failed to load skip options</p>
-          <button 
-            onClick={() => window.location.reload()} 
+          <button
+            onClick={() => window.location.reload()}
             className="bg-gradient-to-r from-yellow-400 to-orange-500 text-gray-900 px-6 py-2 rounded-lg font-bold"
           >
             Retry
@@ -87,9 +87,9 @@ const SkipSelectionPage: React.FC = () => {
 
         {/* Description */}
         <div className="text-center mb-16">
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Select the perfect skip size for your waste disposal needs. All skips feature our premium 
-            <span className="text-yellow-400 font-semibold"> "WE WANT WASTE" </span> 
+          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            Select the perfect skip size for your waste disposal needs. All skips feature our premium
+            <span className="text-yellow-400 font-semibold"> "WE WANT WASTE" </span>
             design and come with flexible hire periods.
           </p>
         </div>
@@ -115,7 +115,7 @@ const SkipSelectionPage: React.FC = () => {
 
         {/* Continue Button - Desktop Only */}
         <div className="text-center hidden lg:block">
-          <button 
+          <button
             className="group relative bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-gray-900 px-12 py-4 rounded-xl text-lg font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
             disabled={!selectedSkip}
           >
@@ -143,21 +143,21 @@ const SkipSelectionPage: React.FC = () => {
                   <div className="text-right">
                     {/* <p className="text-sm font-medium text-yellow-400">{selectedSkipData.size} Yards skip</p>
                     <p className="text-xs text-gray-400">{selectedSkipData.hire_period_days} Day hire</p> */}
-                        <div>
-                    {/* <p className="text-sm text-gray-400">Selected Skip</p> */}
-                    <p className="text-sm font-bold text-yellow-400">{selectedSkipData.size} Yard Skip</p>
-                  </div>
-                  <div>
-                    {/* <p className="text-sm text-gray-400">Hire Period</p> */}
-                    <p className="text-sm text-gray-400">{selectedSkipData.hire_period_days} Day hire</p>
-                  </div>
+                    <div>
+                      {/* <p className="text-sm text-gray-400">Selected Skip</p> */}
+                      <p className="text-sm font-bold text-yellow-400">{selectedSkipData.size} Yard Skip</p>
+                    </div>
+                    <div>
+                      {/* <p className="text-sm text-gray-400">Hire Period</p> */}
+                      <p className="text-sm text-gray-400">{selectedSkipData.hire_period_days} Day hire</p>
+                    </div>
                   </div>
                 )}
               </div>
             </div>
 
             {/* Continue Button */}
-            <button 
+            <button
               className="w-full bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-gray-900 py-4 rounded-xl text-lg font-bold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg"
               disabled={!selectedSkip}
             >
@@ -193,7 +193,7 @@ const SkipSelectionPage: React.FC = () => {
                 </p>
                 <p className="text-xs text-gray-400">inc. VAT</p>
               </div>
-              <button 
+              <button
                 className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-gray-900 px-8 py-4 rounded-xl text-lg font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={!selectedSkip}
               >
