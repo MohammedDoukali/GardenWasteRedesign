@@ -112,17 +112,6 @@ const SkipSelectionPage: React.FC = () => {
             />
           ))}
         </div>
-
-        {/* Continue Button - Desktop Only */}
-        <div className="text-center hidden lg:block">
-          <button
-            className="group relative bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-gray-900 px-12 py-4 rounded-xl text-lg font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-            disabled={!selectedSkip}
-          >
-            <span className="relative z-10">Continue to Permit Check</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-yellow-500 to-orange-600 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
-          </button>
-        </div>
       </div>
 
       {/* Fixed Bottom Section - Always visible when product selected */}
