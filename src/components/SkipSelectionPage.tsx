@@ -19,7 +19,7 @@ const SkipSelectionPage: React.FC = () => {
 
   const handleSkipSelect = (skipId: string) => {
     const skip = skipOptions.find(s => s.id === skipId);
-    if (skip && !skip.is_restricted) {
+    if (skip && skip.allowed_on_road) {
       setSelectedSkip(skipId);
     }
   };
@@ -106,8 +106,8 @@ const SkipSelectionPage: React.FC = () => {
               hireperiod={skip.hire_period_days}
               image="/images/skip.png"
               isSelected={selectedSkip === skip.id}
-              isRestricted={skip.is_restricted}
-              restrictionText={skip.restriction_text}
+              allowed_on_road={skip.allowed_on_road}
+              // restrictionText={skip.restriction_text}
               onSelect={() => handleSkipSelect(skip.id)}
             />
           ))}

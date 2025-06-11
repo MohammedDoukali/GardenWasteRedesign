@@ -11,8 +11,7 @@ interface SkipCardProps {
   hireperiod: string;
   image: string;
   isSelected: boolean;
-  isRestricted?: boolean;
-  restrictionText?: string;
+  allowed_on_road?: boolean;
   onSelect: () => void;
 }
 
@@ -24,8 +23,7 @@ const SkipCard: React.FC<SkipCardProps> = ({
   hireperiod,
   image,
   isSelected,
-  isRestricted = false,
-  restrictionText,
+  allowed_on_road,
   onSelect
 }) => {
   const totalPrice = price + (price * (vat / 100));
@@ -38,7 +36,7 @@ const SkipCard: React.FC<SkipCardProps> = ({
           ? 'border-yellow-400 shadow-lg shadow-yellow-400/20 ring-2 ring-yellow-400/30' 
           : 'border-gray-700 hover:border-gray-600'
         }
-        ${isRestricted ? 'opacity-75 cursor-not-allowed' : ''}
+        ${!allowed_on_road ? 'opacity-75 cursor-not-allowed' : ''}
       `}
       onClick={onSelect}
     >
@@ -68,10 +66,10 @@ const SkipCard: React.FC<SkipCardProps> = ({
         </div>
         
         {/* Restriction warning */}
-        {isRestricted && restrictionText && (
+        {!allowed_on_road && (
           <div className="absolute bottom-4 left-4 right-4 bg-gradient-to-r from-red-500 to-orange-500 text-white px-3 py-2 rounded-lg text-sm font-medium flex items-center shadow-lg">
             <AlertTriangle className="w-4 h-4 mr-2" />
-            {restrictionText}
+            Not Allowed on the road
           </div>
         )}
 
@@ -118,12 +116,12 @@ const SkipCard: React.FC<SkipCardProps> = ({
               e.stopPropagation();
               onSelect();
             }}
-            disabled={isRestricted}
+            disabled={!allowed_on_road}
             className={`
               w-full transition-all duration-300 font-bold text-sm py-3 rounded-xl
               ${isSelected 
                 ? 'bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-gray-900 shadow-lg shadow-yellow-400/30' 
-                : isRestricted
+                : !allowed_on_road
                 ? 'bg-gray-700 text-gray-400 cursor-not-allowed'
                 : 'bg-gray-700 hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 text-white hover:text-gray-900 border border-gray-600 hover:border-yellow-400'
               }
@@ -134,7 +132,7 @@ const SkipCard: React.FC<SkipCardProps> = ({
                 <Check className="w-4 h-4 mr-2" />
                 Selected
               </span>
-            ) : isRestricted ? (
+            ) : !allowed_on_road ? (
               <span className="flex items-center justify-center">
                 <AlertTriangle className="w-4 h-4 mr-2" />
                 Not Available

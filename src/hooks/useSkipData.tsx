@@ -2,15 +2,13 @@
 import { useQuery } from '@tanstack/react-query';
 
 interface SkipData {
+  allowed_on_road: boolean;
   hire_period_days: string;
   id: string;
-  // name: string;
   price_before_vat: number;
   vat: number;
   size: string;
   image_url: string;
-  is_restricted: boolean;
-  restriction_text?: string;
 }
 
 interface SkipApiResponse {
