@@ -7,6 +7,8 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    allowedHosts: ["myngkm-8080.csb.app"],
+
   },
   plugins: [
     react(),
