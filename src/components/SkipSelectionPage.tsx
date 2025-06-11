@@ -66,7 +66,7 @@ const SkipSelectionPage: React.FC = () => {
         <div className="flex items-center mb-8">
           <button
             onClick={handleBack}
-            className="flex items-center justify-center w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-full transition-colors duration-300 mr-4 group"
+            className="flex items-center justify-center w-10 h-10 bg-gray-800 hover:bg-gray-700 rounded-full transition-colors  mr-4 group hover:border-2 hover:border-yellow-400"
             aria-label="Go back to previous step"
           >
             <ArrowLeft className="w-5 h-5 text-gray-300 group-hover:text-yellow-400 transition-colors duration-300" />
@@ -169,7 +169,7 @@ const SkipSelectionPage: React.FC = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">Hire Period</p>
-                    <p className="text-lg font-medium text-white">{selectedSkipData.hire_period_days}</p>
+                    <p className="text-lg font-medium text-white">{selectedSkipData.hire_period_days} Day</p>
                   </div>
                 </>
               )}
